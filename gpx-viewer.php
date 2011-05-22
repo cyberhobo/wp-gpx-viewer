@@ -2,7 +2,7 @@
 Plugin Name: GPX Viewer
 Plugin URI: http://www.cyberhobo.net/2010/02/wordpress-gpx-viewer-plugin
 Description: View uploaded GPX files on a Google map with interactive elevation profile, grade, and speed graphs using <a href="http://www.j-berkemeier.de/GPXViewer/">J�rgen Berkemeir's GPX Viewer scripts</a>. For non-commercial use only.
-Version: 0.5dev
+Version: 0.5
 Author: Dylan Kuhn
 Author URI: http://www.cyberhobo.net/
 Minimum WordPress Version Required: 2.9
