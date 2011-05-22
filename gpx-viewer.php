@@ -1,8 +1,8 @@
 <?php /*
 Plugin Name: GPX Viewer
 Plugin URI: http://www.cyberhobo.net/2010/02/wordpress-gpx-viewer-plugin
-Description: View uploaded GPX files on a Google map with interactive elevation profile, grade, and speed graphs using <a href="http://www.j-berkemeier.de/GPXViewer/">Jürgen Berkemeir's GPX Viewer scripts</a>. For non-commercial use only.
-Version: 0.4
+Description: View uploaded GPX files on a Google map with interactive elevation profile, grade, and speed graphs using <a href="http://www.j-berkemeier.de/GPXViewer/">Jï¿½rgen Berkemeir's GPX Viewer scripts</a>. For non-commercial use only.
+Version: 0.5dev
 Author: Dylan Kuhn
 Author URI: http://www.cyberhobo.net/
 Minimum WordPress Version Required: 2.9
@@ -82,10 +82,10 @@ class GpxViewer {
 			add_filter( 'query_vars', array( &$this, 'query_vars' ) );
 			add_action( 'template_redirect', array( &$this, 'template_redirect' ) );
 			wp_enqueue_script( 'jquery' );
-			$nyro_modal_src = trailingslashit( $this->url_path ) . 'nyroModal-1.5.5/js/jquery.nyroModal-1.5.5.min.js';
-			wp_enqueue_script( 'nyro-modal', $nyro_modal_src, 'jquery', '1.5.5' );
-			$nyro_modal_css = trailingslashit( $this->url_path ) . 'nyroModal-1.5.5/styles/nyroModal.css';
-			wp_enqueue_style( 'nyro-modal', $nyro_modal_css, array(), '1.5.5', 'screen' );
+			$nyro_modal_src = trailingslashit( $this->url_path ) . 'jquery.nyroModal/js/jquery.nyroModal.custom.min.js';
+			wp_enqueue_script( 'nyro-modal', $nyro_modal_src, 'jquery', '2.0' );
+			$nyro_modal_css = trailingslashit( $this->url_path ) . 'jquery.nyroModal/styles/nyroModal.css';
+			wp_enqueue_style( 'nyro-modal', $nyro_modal_css, array(), '2.0', 'screen' );
 			wp_enqueue_script( 'gpx-viewer-loader', trailingslashit( $this->url_path ) . 'gpx-viewer-content.js', 'jquery' );
 		}
 	}

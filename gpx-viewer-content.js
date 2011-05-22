@@ -4,6 +4,6 @@
  */
 if ( jQuery ) {
 	jQuery( function( $ ) {
-		$('.gpx-viewer-link').nyroModal( { width: 1060, height: 550 } );
+		$('.gpx-viewer-link').nyroModal();
 	} );
 }
