@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-15 10:23-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: gpx-viewer.php:100 gpx-viewer.php:167
+msgid "GPX Viewer Settings"
+msgstr ""
+
+#: gpx-viewer.php:106
+msgid "Google API Key"
+msgstr ""
+
+#: gpx-viewer.php:114
+msgid "Default Link Text"
+msgstr ""
+
+#: gpx-viewer.php:128
+msgid "GPX Viewer Track Map and Graphs"
+msgstr ""
+
+#: gpx-viewer.php:152
+#, php-format
+msgid ""
+"GPX Viewer requires a Google API key in the <a href=\"%s\">settings</a> "
+"before it will work."
+msgstr ""
+
+#: gpx-viewer.php:168
+msgid "GPX Viewer"
+msgstr ""
+
+#: gpx-viewer.php:184
+msgid "Settings"
+msgstr ""
+
+#: gpx-viewer.php:217
+msgid "Get yours here"
+msgstr ""
