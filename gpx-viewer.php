@@ -331,7 +331,7 @@ class GpxViewer {
 		$gpx_urls = GpxViewer::get_gpx_attachments();
 		if ( $gpx_urls ) {
 			foreach( $gpx_urls as $gpx_url ) {
-				$urls[] = trailingslashit( get_bloginfo( 'url' ) ) . '?gpx_viewer_content=view-file&url=' .
+				$urls[] = trailingslashit( get_bloginfo( 'url' ) ) . '?gpx_viewer_content=view-file&amp;url=' .
 					urlencode( $gpx_url );
 			}
 		}
@@ -352,7 +352,7 @@ class GpxViewer {
 		$url = '';
 		$gpx_url = GpxViewer::get_gpx_attachment();
 		if ( $gpx_url ) {
-			$url = trailingslashit( get_bloginfo( 'url' ) ) . '?gpx_viewer_content=view-file&url=' .
+			$url = trailingslashit( get_bloginfo( 'url' ) ) . '?gpx_viewer_content=view-file&amp;url=' .
 				urlencode( $gpx_url );
 		}
 		return $url;
@@ -381,7 +381,7 @@ class GpxViewer {
 			$list .= '<ul class="' . $args['list_class'] . '">';
 			foreach( $viewer_urls as $viewer_url ) {
 				$list .= '<li><a href="' . $viewer_url . '" class="gpx-viewer-link" target="_blank">' .
-					$args['link_text'] . ' (' . basename( urldecode( $viewer_url ), '.gpx' ) . ')</a>';
+					$args['link_text'] . ' (' . basename( urldecode( $viewer_url ), '.gpx' ) . ')</a></li>';
 			}
 			$list .= '</ul>';
 		}
