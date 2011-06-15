@@ -1,7 +1,7 @@
 // GPX2GM;
 // Darstellung von GPS-Daten aus einer GPX-Datei in Google Maps
 // Version 4.2
-// 13. 12. 2009 Jürgen Berkemeier
+// 13. 12. 2009 Jï¿½rgen Berkemeier
 // www.j-berkemeier.de
 
 /**
@@ -20,7 +20,7 @@ var GPX2GM = GPX2GM || (function() {
 		'en': {
 			'Strecke': 'Distance',
 			'Strecke in ': 'Distance in ',
-			'H<br />ö<br />h<br />e<br />&nbsp;<br />in<br />&nbsp;<br />': 'E<br />l<br />v<br />.<br />&nbsp;<br />in<br />&nbsp;<br />',
+			'H<br />ï¿½<br />h<br />e<br />&nbsp;<br />in<br />&nbsp;<br />': 'E<br />l<br />v<br />.<br />&nbsp;<br />in<br />&nbsp;<br />',
 			'Stg.<br />&nbsp;<br />in<br />&nbsp;<br />%': 'Grd.<br />&nbsp;<br />in<br />&nbsp;<br />%',
 			'V<br />&nbsp;<br />in<br />&nbsp;<br />': 'Spd.<br />&nbsp;<br />in<br />&nbsp;<br />',
 			'Wegpunkt': 'Waypoint',
@@ -29,21 +29,21 @@ var GPX2GM = GPX2GM || (function() {
 			'Tracks': 'Tracks',
 			'Route': 'Route',
 			'Routen': 'Routes',
-			'Höhe': 'Elev.',
+			'Hï¿½he': 'Elev.',
 			'Geschw.': 'Speed',
 			'Stg.': 'Grade',
 			'Fehler': 'Error',
 			'Beim Oeffnen der Datei ': 'Could not open the GPX file ',
 			' ist der Fehler ': ' because the error ',
 			' aufgetreten!': ' was received!',
-			'Ihr Browser unterstützt nicht die benötigten Methoden!': 'Your browser doesn\'t support the methods needed by Google maps.'
+			'Ihr Browser unterstï¿½tzt nicht die benï¿½tigten Methoden!': 'Your browser doesn\'t support the methods needed by Google maps.'
 			}
 		},
 		unit_conversions = {
 			'us': {
 				'm': { factor: 3.2808, label: 'ft' },
 				'km': { factor: 0.62137, label: 'mi' },
-				'km/h': { factor: 0.62137, label: 'mi/h' }
+				'm/s': { factor: 2.23694, label: 'mi/h' }
 			}
 		};
 
@@ -165,9 +165,9 @@ var GPX2GM = GPX2GM || (function() {
 		var hp_xtext = _('Strecke in ') + _u( 'km' );
 		var vp_xtext = _('Strecke in ') + _u( 'km' );
 		var sp_xtext = _('Strecke in ') + _u( 'km' );
-		var hp_ytext = _("H<br />ö<br />h<br />e<br />&nbsp;<br />in<br />&nbsp;<br />") + _u('m');
+		var hp_ytext = _("H<br />ï¿½<br />h<br />e<br />&nbsp;<br />in<br />&nbsp;<br />") + _u('m');
 		var sp_ytext = _("Stg.<br />&nbsp;<br />in<br />&nbsp;<br />%");
-		var vp_ytext = _("V<br />&nbsp;<br />in<br />&nbsp;<br />") + _u('km/h');
+		var vp_ytext = _("V<br />&nbsp;<br />in<br />&nbsp;<br />") + _u('m/s');
 		for(var i=0;i<scr.length;i++) if(scr[i].src && scr[i].src.length) {
 			var path = scr[i].src;
 			var pos = path.search(/GPX2GM(\.min)?.js/);
@@ -236,7 +236,7 @@ var GPX2GM = GPX2GM || (function() {
 		map.addControl(new GMenuMapTypeControl());
 	//  map.addControl(new GMapTypeControl());
 	//  map.addControl(new GHierarchicalMapTypeControl());
-	//  map.addMapType(G_SATELLITE_3D_MAP); // benötigt Plugin
+	//  map.addMapType(G_SATELLITE_3D_MAP); // benï¿½tigt Plugin
 		map.addControl(new GScaleControl());
 		map.enableScrollWheelZoom();
 		map.getPane(G_MAP_FLOAT_PANE).appendChild(markerinfo);
@@ -247,7 +247,7 @@ var GPX2GM = GPX2GM || (function() {
 		if(hp) {
 			hp_diag = new plot(id_hp,"x","h");
 			if (hp.className && hp.className.search("no_x")!=-1) hp_xtext="";
-			JB_GM_Info(id,"Höhenprofil, ID: "+id_hp,false);
+			JB_GM_Info(id,"Hï¿½henprofil, ID: "+id_hp,false);
 		}
 		var sp = document.getElementById(id_sp);
 		var sp_diag;
@@ -420,7 +420,7 @@ var GPX2GM = GPX2GM || (function() {
 						vp = false;
 					}
 				}
-				if(hflag) JB_GM_Info(id,"Höhendaten gefunden",false); else JB_GM_Info(id,"Keine Höhendaten gefunden",false);
+				if(hflag) JB_GM_Info(id,"Hï¿½hendaten gefunden",false); else JB_GM_Info(id,"Keine Hï¿½hendaten gefunden",false);
 				if(tflag) JB_GM_Info(id,"Zeitdaten gefunden",false); else JB_GM_Info(id,"Keine Zeitdaten gefunden",false);
 				if(vflag) JB_GM_Info(id,"Geschwindigkeitsdaten gefunden",false); else JB_GM_Info(id,"Keine Geschwindigkeitsdate gefunden",false);
 				alledaten.push(daten);
@@ -537,7 +537,7 @@ var GPX2GM = GPX2GM || (function() {
 				}
 				if(hp) hp_diag.frame(50,35,hp_xtext,hp_ytext, 'km', 'm');
 				if(sp) sp_diag.frame(50,35,sp_xtext,sp_ytext, 'km', '%');
-				if(vp) vp_diag.frame(50,35,vp_xtext,vp_ytext, 'km', 'km/h');
+				if(vp) vp_diag.frame(50,35,vp_xtext,vp_ytext, 'km', 'm/s');
 				if(tracks.length>1) {
 					for(var i=0;i<tracks.length;i++) if(chktrk.status[i+1]) {
 						var info = "<strong>"+trackNames[i]+" ("+ _u('km', tracklens[i], 10, true) +")</strong>"
@@ -663,11 +663,11 @@ var GPX2GM = GPX2GM || (function() {
 		this.markermove = function(p,a) {
 			var info = _('Strecke')+':&nbsp;'+_u('km', a.x, 1, true);
 			if(hp) {
-				info += "<br />" + _('Höhe') + ":&nbsp;"+_u('m', Math.round(a.h), 0, true);
+				info += "<br />" + _('Hï¿½he') + ":&nbsp;"+_u('m', Math.round(a.h), 0, true);
 				hp_diag.setmarker(a,"Linie");
 			}
 			if(vp) {
-				info += "<br />" + _('Geschw.') + ":&nbsp;"+_u('km/h', Math.round(a.v), 0, true);
+				info += "<br />" + _('Geschw.') + ":&nbsp;"+_u('m/s', Math.round(a.v), 0, true);
 				vp_diag.setmarker(a,"Linie");
 			}
 			if(sp) {
@@ -876,7 +876,7 @@ var GPX2GM = GPX2GM || (function() {
 
 	// gra
 	// Version vom 28.5.09
-	// Jürgen Berkemeier
+	// Jï¿½rgen Berkemeier
 	// www.j-berkemeier.de
 	function gra(ID) {
 	 var feld=document.getElementById(ID);
@@ -1011,7 +1011,7 @@ var GPX2GM = GPX2GM || (function() {
 
 	// plot
 	// Version vom 29. 10. 2009
-	// Jürgen Berkemeier
+	// Jï¿½rgen Berkemeier
 	// www.j-berkemeier.de
 	var plot = function(id,xstr,ystr) {
 		var JB_log10 = function(x) { return Math.log(x)/Math.LN10; }
@@ -1217,7 +1217,7 @@ var GPX2GM = GPX2GM || (function() {
 	// PolylineEncoder.js copyright Mark McClure  April/May 2007
 	// V 2.1  July 2007
 	// http://facstaff.unca.edu/mcmcclur/GoogleMaps/EncodePolyline/PolylineEncoderClass.html
-	// Geringfügig angepasst von JB
+	// Geringfï¿½gig angepasst von JB
 	var PolylineEncoder = function() {
 		this.numLevels = 18;
 		this.zoomFactor = 2;
