@@ -1,9 +1,9 @@
 === GPX Viewer ===
 Contributors: cyberhobo
 Tags: gpx, geo, maps, googlemaps, graphs, modal
-Version: 0.4
+Version: 0.5.1
 Requires at least: 2.8
-Tested up to: 3.1.2
+Tested up to: 3.4beta
 License: free for non-commercial use
 
 GPX Viewer creates a map visualization of GPX files attached to a post.
