@@ -289,7 +289,7 @@ class GpxViewer {
 		if ( $post_id ) {
 			$attachments = get_posts( array( 
 				'post_type' => 'attachment',
-				'numberposts' => null,
+				'numberposts' => -1,
 				'post_status' => null,
 				'post_parent' => $post_id
 			) );
